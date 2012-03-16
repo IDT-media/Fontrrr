@@ -34,7 +34,7 @@ class Fontsquirrel {
 
     public function __construct() {
         $config = cms_utils::get_config();
-        $db = cms_utils::get_db();
+        $db     = cms_utils::get_db();
     }
   
     /**
@@ -52,19 +52,19 @@ class Fontsquirrel {
                 );
 
             $font = new StdClass;
-            $font->provider = 'fontsquirrel';
-            $font->font_id = $font_import->id;
-            $font->family_name = $font_import->family_name;
-            $font->is_monocase = $font_import->is_monocase;
-            $font->url = 'http://www.fontsquirrel.com/fonts/' . $font_import->family_urlname;
-            $font->foundry_name = $font_import->foundry_name;
-            $font->foundry_url = 'http://www.fontsquirrel.com/foundry/' . $font_import->foundry_urlname;
+            $font->provider      = 'fontsquirrel';
+            $font->font_id       = $font_import->id;
+            $font->family_name   = $font_import->family_name;
+            $font->is_monocase   = $font_import->is_monocase;
+            $font->url           = 'http://www.fontsquirrel.com/fonts/' . $font_import->family_urlname;
+            $font->foundry_name  = $font_import->foundry_name;
+            $font->foundry_url   = 'http://www.fontsquirrel.com/foundry/' . $font_import->foundry_urlname;
             $font->font_filename = $font_import->font_filename;
-            $font->tags = array($font_import->classification);
-            $font->metadata = serialize($metadata);
-            $font->family_count = $font_import->family_count;
-            $font->license = 'See Font Squirrel license page';
-            $font->license_url = 'http://www.fontsquirrel.com/fonts/' . $font_import->family_urlname . '#eula';
+            $font->tags          = array($font_import->classification);
+            $font->metadata      = serialize($metadata);
+            $font->family_count  = $font_import->family_count;
+            $font->license       = 'See Font Squirrel license page';
+            $font->license_url   = 'http://www.fontsquirrel.com/fonts/' . $font_import->family_urlname . '#eula';
 
         }
         return $font;
@@ -74,7 +74,7 @@ class Fontsquirrel {
      * Generate preview from Font information
      */
     public function fs_preview($font, $text = NULL, $size = 18) {
-        $output = '';
+        $output   = '';
         $metadata = unserialize($font->metadata);
         
         if ($text == NULL) {
