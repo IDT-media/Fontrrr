@@ -27,11 +27,11 @@
 #-------------------------------------------------------------------------
 if (!is_object(cmsms())) exit;
 
-    if (!$this->CheckPermission('Use Fontr')
-          || !$this->CheckPermission('Set Fontr Prefs')
+    if (!$this->CheckPermission('Use Fontrrr')
+          || !$this->CheckPermission('Set Fontrrr Prefs')
           || !$this->CheckPermission('Modify Site Preferences'))
     {
-        echo $this->ShowErrors($this -> Lang('accessdenied', array('Use Fontr')));
+        echo $this->ShowErrors($this -> Lang('accessdenied', array('Use Fontrrr')));
         return;
     }
     
